@@ -1,7 +1,7 @@
 var axios = require('axios');
 
-var id = "YOUR_CLIENT_ID";
-var sec = "YOUR_SECRET_ID";
+var id = "ac2665a586f287c19366";
+var sec = "a0c6a6f93585ffd2977a7ea6ac3b8fed8b9ab1ea";
 var params = "?client_id=" + id + "&client_secret=" + sec;
 
 function getProfile (username) {
@@ -12,7 +12,7 @@ function getProfile (username) {
 }
 
 function getRepos (username) {
-    return axios.get('http://api.github.com/users/'+ username + + '/repos' +params + '&per_page=100');
+    return axios.get('http://api.github.com/users/'+ username + '/repos' + params + '&per_page=100&token= f2fae4f6bfe696d2124fccbddd167cf8d5d5ed84');
 }
 
 function getStarCount (repos) {
@@ -40,7 +40,6 @@ function getUserData (player) {
     ]).then(function(data) {
         var profile = data[0]; // Axios.all() does multiple promises and returns data
         var repos = data[1]; // Data[0] contains first promise response and so on
-
         return {
             profile: profile,
             score: calculateScore(profile, repos)
