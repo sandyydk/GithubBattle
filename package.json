@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open",
-    "build":  "webpack -p NODE_ENV='production'",
+    "build": "NODE_ENV='production' webpack -p",
     "deploy": "npm run build && firebase deploy",
-    "firebase-init":"firebase login && firebase init"
+    "firebase-init": "firebase login && firebase init"
   },
   "babel": {
     "presets": [
@@ -31,6 +31,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.10",
+    "firebase-tools": "^3.17.7",
     "html-webpack-plugin": "^2.28.0",
     "style-loader": "^0.20.2",
     "webpack": "^2.3.1",
